@@ -1,0 +1,53 @@
+zerg:
+  auto_queen:
+    - "keyb.press_and_release('space')"
+    - "keyb.press_and_release('8')"
+    - "mouse.position = (946, 500)"
+    - "keyb.press_and_release('v')"
+    - "mouse.click(Button.left, 1)"
+  auto_drone:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.02)"
+    - "keyb.press_and_release('d')"
+  auto_overlord:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('v')"
+  auto_ling:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('z')"
+  auto_roach:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('r')"
+  auto_muta:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('t')"
+  auto_corruptor:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('c')"
+  auto_ultra:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('u')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('u')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('u')"

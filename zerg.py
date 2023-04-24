@@ -1,18 +1,13 @@
-# -*- coding: utf-8 -*-
-
+# Import required libraries
+import os
+import sys
+import time
+import random
+import winsound
 from pynput import keyboard
 from pynput.keyboard import Key, Controller as KeyboardController
 from pynput.mouse import Button, Controller as MouseController
-
 import keyboard as keyb
-import time
-import sys
-import os
-
-
-import winsound
-import random
-
 
 # Stop macro
 def stop_sc2hk(key):
@@ -20,36 +15,25 @@ def stop_sc2hk(key):
         os._exit(0)
 
 keyb.on_press(stop_sc2hk)
+print("zerg auto hk ON")
 
-
-print("zerg autohk ON")
 # Send glhf in 1x1
 def autohk(key):
-    # The currently active modifiers
-    current = set()
-    keynew = KeyboardController()
+    current = set()  # The currently active modifiers
+    key_new = KeyboardController()
     mouse = MouseController()
 
-    # mark hotkeys local with sound
+    # Mark hotkeys local with sound
     if key.name == "0":
-        # press f5, f6, f7, f8 between sounds
-        keyb.press_and_release("f5")
-        winsound.Beep(1500, 200)
-        time.sleep(1)
-        keyb.press_and_release("f6")
-        winsound.Beep(1500, 200)
-        time.sleep(1)
-        keyb.press_and_release("f7")
-        winsound.Beep(1500, 200)
-        time.sleep(1)
-        keyb.press_and_release("f8")
-        winsound.Beep(1500, 200)
-        time.sleep(1)
+        # Press F5, F6, F7, F8 between sounds
+        for f_key in ["f5", "f6", "f7", "f8"]:
+            keyb.press_and_release(f_key)
+            winsound.Beep(1500, 200)
+            time.sleep(1)
 
-   
-    # auto queen
+    # Auto queen
     if key.name == "=":
-        for x in range(1):
+        for _ in range(1):
             time.sleep(0.01)
             keyb.press_and_release("space")
             time.sleep(0.05)
@@ -58,7 +42,7 @@ def autohk(key):
             keyb.press_and_release("v")
             mouse.click(Button.left, 1)
 
-    # auto drone
+    # Auto drone
     if key.name == "4":
         keyb.press_and_release("3")
         time.sleep(0.01)
@@ -66,7 +50,7 @@ def autohk(key):
         time.sleep(0.02)
         keyb.press_and_release("d")
 
-    # auto overlord
+    # Auto overlord
     if key.name == "5":
         keyb.press_and_release("3")
         time.sleep(0.01)
@@ -74,7 +58,7 @@ def autohk(key):
         time.sleep(0.02)
         keyb.press_and_release("v")
 
-    # auto ling
+    # Auto ling
     if key.name == "6":
         keyb.press_and_release("3")
         time.sleep(0.01)
@@ -82,7 +66,7 @@ def autohk(key):
         time.sleep(0.03)
         keyb.press_and_release("z")
 
-    # auto roach
+    # Auto roach
     if key.name == "7":
         keyb.press_and_release("3")
         time.sleep(0.01)
@@ -90,7 +74,7 @@ def autohk(key):
         time.sleep(0.03)
         keyb.press_and_release("r")
 
-    # auto muta
+    # Auto muta
     if key.name == "]":
         keyb.press_and_release("3")
         time.sleep(0.01)
@@ -98,7 +82,7 @@ def autohk(key):
         time.sleep(0.03)
         keyb.press_and_release("t")
 
-    # auto corruptor
+    # Auto corruptor
     if key.name == "[":
         keyb.press_and_release("3")
         time.sleep(0.01)
@@ -106,18 +90,19 @@ def autohk(key):
         time.sleep(0.03)
         keyb.press_and_release("c")
 
-    # auto ultra
+    # Auto ultra
     if key.name == ";":
         keyb.press_and_release("3")
         time.sleep(0.01)
         keyb.press_and_release("s")
-        for x in range(3):
+        for _ in range(3):
             time.sleep(0.03)
             keyb.press_and_release("u")
+           
 
-
-
-# calls
+# Calls the autohk function when a key is pressed
 keyb.on_press(autohk)
+
+# Start the keyboard listener
 with keyboard.Listener() as listener:
     listener.join()

@@ -1,4 +1,3 @@
-# Import required libraries
 import os
 import sys
 import time
@@ -9,19 +8,34 @@ from pynput.keyboard import Key, Controller as KeyboardController
 from pynput.mouse import Button, Controller as MouseController
 import keyboard as keyb
 
-# Stop macro
-def stop_sc2hk(key):
-    if key.name == "delete":
-        os._exit(0)
+# Variável global para armazenar o estado de pausa
+paused = False
 
-keyb.on_press(stop_sc2hk)
 print("zerg auto hk ON")
 
-# Send glhf in 1x1
-def autohk(key):
-    current = set()  # The currently active modifiers
+def autohk_and_toggle_pause(key):
+    global paused
+
     key_new = KeyboardController()
     mouse = MouseController()
+
+    # Alternar o estado de pausa ao pressionar 'p'
+    if key.name == "p":
+        paused = not paused
+        if paused:
+            print("Script pausado")
+        else:
+            print("Script retomado")
+            winsound.Beep(1500, 200)
+        return
+
+    # Verificar se o script está pausado
+    if paused:
+        return
+
+    # Stop macro
+    if key.name == "delete":
+        os._exit(0)
 
     # Mark hotkeys local with sound
     if key.name == "0":
@@ -101,7 +115,7 @@ def autohk(key):
            
 
 # Calls the autohk function when a key is pressed
-keyb.on_press(autohk)
+keyb.on_press(autohk_and_toggle_pause)
 
 # Start the keyboard listener
 with keyboard.Listener() as listener:

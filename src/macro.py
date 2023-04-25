@@ -12,7 +12,7 @@ import yaml
 # Variável global para armazenar o estado de pausa
 paused = False
 
-print("zerg auto hk ON")
+print("auto hk ON")
 
 # Load config file
 with open('config.yaml', 'r') as f:

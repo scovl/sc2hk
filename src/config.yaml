@@ -51,3 +51,55 @@ zerg:
     - "keyb.press_and_release('u')"
     - "time.sleep(0.03)"
     - "keyb.press_and_release('u')"
+    
+protoss:
+  auto_probe:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.02)"
+    - "keyb.press_and_release('e')"
+  auto_zealot:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('z')"
+  auto_stalker:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('s')"
+  auto_immortal:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('i')"
+
+terran:
+  auto_scv:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.02)"
+    - "keyb.press_and_release('s')"
+  auto_marine:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('a')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('a')"
+  auto_marauder:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('a')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('d')"
+  auto_siege_tank:
+    - "keyb.press_and_release('3')"
+    - "time.sleep(0.01)"
+    - "keyb.press_and_release('s')"
+    - "time.sleep(0.03)"
+    - "keyb.press_and_release('t')"

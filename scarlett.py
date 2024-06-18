@@ -3,7 +3,7 @@ import time
 import winsound
 from pynput import keyboard
 from pynput.keyboard import Controller as KeyboardController
-from pynput.mouse import Controller as MouseController
+from pynput.mouse import Controller as MouseController, Button
 import keyboard as keyb
 import yaml
 import logging
@@ -30,43 +30,76 @@ for profile, actions in config.items():
 # Funções de ação específicas
 def auto_queen():
     logging.info("Executing auto_queen actions")
-    for step in profiles['zerg']['auto_queen']:
-        exec(step)
+    mouse = MouseController()  # Definir o controlador do mouse
+    try:
+        for step in profiles['zerg']['auto_queen']:
+            logging.info(f"Executing step: {step}")
+            exec(step)
+    except Exception as e:
+        logging.error(f"Error in auto_queen: {e}")
 
 def auto_drone():
     logging.info("Executing auto_drone actions")
-    for step in profiles['zerg']['auto_drone']:
-        exec(step)
+    try:
+        for step in profiles['zerg']['auto_drone']:
+            logging.info(f"Executing step: {step}")
+            exec(step)
+    except Exception as e:
+        logging.error(f"Error in auto_drone: {e}")
 
 def auto_overlord():
     logging.info("Executing auto_overlord actions")
-    for step in profiles['zerg']['auto_overlord']:
-        exec(step)
+    try:
+        for step in profiles['zerg']['auto_overlord']:
+            logging.info(f"Executing step: {step}")
+            exec(step)
+    except Exception as e:
+        logging.error(f"Error in auto_overlord: {e}")
 
 def auto_ling():
     logging.info("Executing auto_ling actions")
-    for step in profiles['zerg']['auto_ling']:
-        exec(step)
+    try:
+        for step in profiles['zerg']['auto_ling']:
+            logging.info(f"Executing step: {step}")
+            exec(step)
+    except Exception as e:
+        logging.error(f"Error in auto_ling: {e}")
 
 def auto_roach():
     logging.info("Executing auto_roach actions")
-    for step in profiles['zerg']['auto_roach']:
-        exec(step)
+    try:
+        for step in profiles['zerg']['auto_roach']:
+            logging.info(f"Executing step: {step}")
+            exec(step)
+    except Exception as e:
+        logging.error(f"Error in auto_roach: {e}")
 
 def auto_muta():
     logging.info("Executing auto_muta actions")
-    for step in profiles['zerg']['auto_muta']:
-        exec(step)
+    try:
+        for step in profiles['zerg']['auto_muta']:
+            logging.info(f"Executing step: {step}")
+            exec(step)
+    except Exception as e:
+        logging.error(f"Error in auto_muta: {e}")
 
 def auto_corruptor():
     logging.info("Executing auto_corruptor actions")
-    for step in profiles['zerg']['auto_corruptor']:
-        exec(step)
+    try:
+        for step in profiles['zerg']['auto_corruptor']:
+            logging.info(f"Executing step: {step}")
+            exec(step)
+    except Exception as e:
+        logging.error(f"Error in auto_corruptor: {e}")
 
 def auto_ultra():
     logging.info("Executing auto_ultra actions")
-    for step in profiles['zerg']['auto_ultra']:
-        exec(step)
+    try:
+        for step in profiles['zerg']['auto_ultra']:
+            logging.info(f"Executing step: {step}")
+            exec(step)
+    except Exception as e:
+        logging.error(f"Error in auto_ultra: {e}")
 
 # Dicionário para mapeamento de teclas para funções
 key_to_action = {

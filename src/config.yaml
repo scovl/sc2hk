@@ -5,6 +5,7 @@ zerg:
     - "mouse.position = (946, 500)"
     - "keyb.press_and_release('v')"
     - "mouse.click(Button.left, 1)"
+    -  time.sleep(0.02)
   auto_drone:
     - "keyb.press_and_release('3')"
     - "time.sleep(0.01)"
